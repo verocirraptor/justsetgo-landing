@@ -3,9 +3,12 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import BaseHeader from "@/components/BaseHeader.astro";
 import BaseHero from "@/components/BaseHero.astro"
 // import DestinosCarrusel from "@/components/DestinosCarrusel.astro";
+const title = "JustSetGo";
 ---
+<!--funcionalidad boton tema claro/oscuro -->
+<script type="module" src="/scriptsJs/theme.js"></script>
 
-<BaseLayout>
+<BaseLayout title={title}>
 	<BaseHeader/>
 	<BaseHero/>
 	<!-- <DestinosCarrusel/> -->

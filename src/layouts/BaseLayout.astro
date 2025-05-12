@@ -1,5 +1,6 @@
 ---
 import "@/css/globals.css"
+const {title} = Astro.props
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -9,11 +10,10 @@ import "@/css/globals.css"
 		<link rel="icon" type="image/svg+xml" href="/icons/Dark-theme-icon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{title}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
     	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-		<script type="module" src="/scripts/theme.js"></script>
 	</head>
 	<body>
 		<slot/>

@@ -1,3 +1,28 @@
+Carrusel:
+
+pnpm add @splidejs/splide
+
+creamos el archivo destinosCarrusel.astro
+
+archivos: destinosCarrusel              de momento no
+en index.astro:
+
+---------------------------------------------------------
+implementacion de tema oscuro/claro:
+
+carpeta ProyectoFinal\idea-montaje\themes
+
+en proyecto:
+
+en components y header
+
+tema oscuro/claro hecho / Importado en BaseHeader
+
+importacion script de theme cambiado a index.astro
+
+title implementado
+
+--------------------------------------------------------
 header- corelmontaje - boton cambiar tema - 
 
 hero-background con eslogan

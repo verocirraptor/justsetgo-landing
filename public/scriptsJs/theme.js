@@ -2,32 +2,30 @@ function setThemeClass(theme) {
   document.documentElement.classList.remove('light', 'dark');
   document.documentElement.classList.add(theme);
   localStorage.setItem('theme', theme);
-  
 
   const img = document.querySelector('.logo-combo');
   if (img) {
     img.src = theme === 'dark' 
-    ? '/images/dark-logo-combo.png' 
-    : '/images/light-logo-combo.png';
+      ? '/images/dark-logo-combo.png' 
+      : '/images/light-logo-combo.png';
   }
 }
 
 function toggleTheme() {
   const current = localStorage.getItem('theme') || 'light';
   const newTheme = current === 'light' ? 'dark' : 'light';
- 
-  setThemeClass(newTheme);
 
+  setThemeClass(newTheme);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme') || 'light';
   setThemeClass(savedTheme);
 
-  // Este botón puede ser opcional: lo puedes incluir donde quieras
+  // Sincroniza el estado del botón con el tema almacenado
   const btn = document.getElementById('theme-toggle');
-  console.log(btn);
   if (btn) {
-    btn.addEventListener('click', toggleTheme);
+    btn.checked = savedTheme === 'dark'; // Marca el botón si el tema es oscuro
+    btn.addEventListener('change', toggleTheme); // Cambia el evento a 'change' para reflejar el estado del checkbox
   }
 });
