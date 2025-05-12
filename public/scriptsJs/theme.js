@@ -26,6 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('theme-toggle');
   if (btn) {
     btn.checked = savedTheme === 'dark'; // Marca el botón si el tema es oscuro
-    btn.addEventListener('change', toggleTheme); // Cambia el evento a 'change' para reflejar el estado del checkbox
+    btn.addEventListener('change', toggleTheme); // estado del checkbox
   }
 });
