@@ -1,0 +1,14 @@
+header- corelmontaje - boton cambiar tema - 
+
+hero-background con eslogan
+- hay que cambiar luego del div .block el background-image para tema oscuro
+
+bento- recopilacion imagenes - y frase corta izquierda
+
+bali, paris, roma, japon, eeuu, Nueva york, Maldidas, Egipto, Tailandia, 
+Argentina, Mexico, Safaris, Que es justsetgo, 
+
+
+
+
+

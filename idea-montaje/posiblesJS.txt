@@ -1,0 +1,116 @@
+🚀 1. Funciones para la Interactividad
+📌 Cambio de Modo Oscuro/Claro
+
+Guarda la preferencia en localStorage y cambia los estilos.
+
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
+    }
+});
+
+🌍 2. Funciones con APIs Externas
+
+📌 Obtener el Clima del Destino (Usando OpenWeather API)
+
+async function getWeather(city) {
+    const apiKey = "TU_API_KEY";
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    
+    const response = await fetch(url);
+    const data = await response.json();
+    
+    console.log(`Temperatura en ${city}: ${data.main.temp}°C`);
+}
+getWeather("Madrid");
+
+
+📌 Conversor de Moneda (Usando API de Exchange Rate)
+
+async function convertCurrency(amount, from, to) {
+    const apiKey = "TU_API_KEY";
+    const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${from}`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+    
+    const rate = data.conversion_rates[to];
+    console.log(`${amount} ${from} son ${(amount * rate).toFixed(2)} ${to}`);
+}
+convertCurrency(100, "USD", "EUR");
+
+
+
+🗺️ 3. Funciones de Mapas y Ubicación
+
+📌 Mostrar un Mapa con Leaflet.js
+
+function initMap() {
+    const map = L.map('map').setView([40.4168, -3.7038], 10); // Madrid
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+    
+    L.marker([40.4168, -3.7038]).addTo(map)
+        .bindPopup('Madrid, España')
+        .openPopup();
+}
+window.onload = initMap;
+
+
+📝 4. Funciones de Planificación de Viajes
+
+📌 Agregar y Eliminar Actividades a un Itinerario
+
+let itinerary = [];
+
+function addActivity(activity) {
+    itinerary.push(activity);
+    console.log(`Actividad añadida: ${activity}`);
+}
+
+function removeActivity(activity) {
+    itinerary = itinerary.filter(item => item !== activity);
+    console.log(`Actividad eliminada: ${activity}`);
+}
+
+addActivity("Visitar la Torre Eiffel");
+removeActivity("Visitar la Torre Eiffel");
+
+
+⏳ 5. Función de Cuenta Regresiva para un Viaje
+
+function countdown(date) {
+    const tripDate = new Date(date).getTime();
+    const now = new Date().getTime();
+    const diff = tripDate - now;
+
+    if (diff <= 0) {
+        console.log("¡Es el día del viaje! 🎉");
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    console.log(`Faltan ${days} días para el viaje.`);
+}
+
+countdown("2025-07-15");
+
+🔔 6. Función para Enviar Notificaciones
+
+function sendNotification(message) {
+    if (Notification.permission === "granted") {
+        new Notification("Gestión de Viajes", { body: message });
+    } else if (Notification.permission !== "denied") {
+        Notification.requestPermission().then(permission => {
+            if (permission === "granted") {
+                new Notification("Gestión de Viajes", { body: message });
+            }
+        });
+    }
+}
+
+sendNotification("¡Tu vuelo sale en 3 horas!");
