@@ -1,0 +1,8 @@
+para que te pille las rutas relativas con @ / en ts.config.json :
+
+  "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["src/*"],
+      }
+    }
