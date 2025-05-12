@@ -1,24 +1,40 @@
 ---
-
+import SwitchTheme from "@/components/SwitchTheme.astro";
 ---
 
 <style>
     header {
+        /*background-color: blueviolet;*/
+        max-width: 1200px;
+        margin: 2rem auto;
+        /* padding-top: 2rem ; */
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        margin: 2%;
+        height: auto;
+
+    }
+    .theme{
+        /* padding-top: 12px;
+        padding-right: 30px; */
     }
 </style>
 
 <header>
-    <div class="menu">
-    </div>
-
     <div class="logo">
-        <a href="/"><img src="/images/logos/logo-combo.png" alt="Logotipo de JustSetGo" width="250" height="auto"></a>
+        <a href="/">
+            <img class="logo-combo" 
+            src="/images/logos/logo-combo.png" 
+            alt="Logotipo de JustSetGo" 
+            width="250" 
+            height="auto">
+        </a>
     </div>
 
     <div class="icons-support">
     </div>
+
+     <div class="theme">
+        <SwitchTheme/>
+    </div>
 </header>
+<script type="module" src="/scripts/theme.js"></script>
