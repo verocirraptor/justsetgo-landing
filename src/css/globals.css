@@ -1,11 +1,11 @@
 :root {
   --bg-color: white;
-  --text-color: rgb(122, 248, 19);
+  --text-color: rgb(7, 7, 7);
 }
 
 .dark {
   --bg-color: #1a1a1a;
-  --text-color: #e00d0d;
+  --text-color: #ffffff;
 }
 
 body {
